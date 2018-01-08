@@ -64,11 +64,11 @@
        <a-entity>
       <a-entity position="-4.5 2.5 -10">
         <a-entity id="green cube" class="intersectable" mixin="cube" sound="on: click; src: #click-sound"></a-entity>
-      <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
-
-        <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-out"> </a-animation>
-      <a-animation begin="click" attribute="position" begin="4000" from="-4.5 2.5 -10" to="0 3 -5"dur="4000" fill="backwards" easing="ease-out"></a-animation>
-      <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-out"></a-animation>
+          <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
+      
+            <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-in-out" ></a-animation>
+            <a-animation begin="click" attribute="position" begin="4000" from="-4.5 2.5 -10" to="0 3 -5" dur="4000" fill="backwards" easing="ease-in-out"> </a-animation>
+            <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-in-out"> </a-animation> 
      </a-entity>
       </a-entity>
     
@@ -86,12 +86,12 @@
 
      
 <a-entity position="0 0.0 ">
-<a-camera position="0 1.8 0" rotation="0 0 0" camera="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" data-aframe-avatar-replayer-camera="">
+<a-camera position="0 2.1 1" rotation="0 0 0" camera="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" data-aframe-avatar-replayer-camera="">
 <a-entity id="cursor" raycaster="far:30;objects:.intersectable" cursor="fuse: true" geometry="primitive:ring;radiusOuter:0.015;radiusInner:0.01" material="color:white;shader:flat" position="0 0 -0.75" sound="on: fusing; src: #buzz-sound">
   <a-animation begin="fusing" attribute="material.color" from="white" to="yellow"fill="backwards"></a-animation>
    <a-animation begin="fusing" attribute="scale" from="1 1 1" to=".6 .6 .6" fill="backwards"></a-animation>
   </a-entity>
-<a-entity id="iready logo" geometry="primitive:plane;height:0.41" material="0:s;1:r;2:c;3::;4:#;5:i;6:r;7:e;8:a;9:d;10:y;11:;;12: ;13:s;14:h;15:a;16:d;17:e;18:r;19:;;20: ;21:f;22:l;23:a;24:t;src:#iready;opacity:0.4" position="3.32 -1.763 -4.225" rotation="0 0 0" scale="1.2 1.2 1.2" visible="true"> </a-entity>  </a-camera>
+<a-entity id="iready logo" geometry="primitive:plane;height:0.41" material="0:s;1:r;2:c;3::;4:#;5:i;6:r;7:e;8:a;9:d;10:y;11:;;12: ;13:s;14:h;15:a;16:d;17:e;18:r;19:;;20: ;21:f;22:l;23:a;24:t;src:#iready;opacity:0.4" position="2.6 -1.2 -4.225" rotation="0 0 0" scale="1.2 1.2 1.2" visible="true"> </a-entity>  </a-camera>
         
       
       
