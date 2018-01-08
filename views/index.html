@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECS - A-Frame School</title>
+    <meta name="description" content="ECS - A-Frame School">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@%5E3.2.x/dist/aframe-animation-component.min.js"></script>
+       <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.2/dist/aframe-controller-cursor-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="click-sound" src="https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2Fclick.mp3?1515358817449"></audio>
+        <audio id="buzz-sound" src="https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2Fruler_wiggle2.wav?1515380868848"></audio>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="iready" src="https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2FScreen%20Shot%202018-01-07%20at%209.17.35%20PM.png?1515377968530">
+        <a-mixin id="cylinder"geometry="primitive:cylinder;height:2;radius:0.6" material="color:yellow; shader:standard; src:https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2FTexturesCom_PlasterBareSeams0031_1_seamless_S.jpg?151536"></a-mixin>
+        <a-mixin id="cone" geometry="primitive:cone;height:2;radiusTop:0"  material="color:blue;shader:standard; src:https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2FTexturesCom_Plastic0144_5_seamless_S.jpg?1515375634435"></a-mixin>
+        <a-mixin id="sphere" geometry="primitive:sphere;radius:0.87" material="color:red; shader:standard; src:https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2FTexturesCom_PlasterBareSeams0031_1_seamless_S.jpg?151536"></a-mixin>
+        <a-mixin id="cube" geometry="primitive:box; scale:1.5" material="color:green; shader:standard; src:https://cdn.glitch.com/757afdc7-34de-489a-90ed-60813d965ca1%2FTexturesCom_PlasterBareSeams0031_1_seamless_S.jpg?151536"></a-mixin>
+      
+      </a-assets>
+      
+      <a-entity id="sky" geometry="primitive:sphere;thetaLength:180;radius:30" material="side:back;height:2048;width:2048;src:#skyTexture;shader:flat" position="0 0 0" rotation="0 -180 0" scale="1 1 1" visible="true"></a-entity>
+    
+      
+      
+      
+      <a-entity>
+        <a-entity position="-1.5 2.5 -10">
+          <a-entity id="yellow cylinder" class="intersectable" mixin="cylinder" sound="on: click; src: #click-sound"></a-entity>
+      <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
+    
+      <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-out"> </a-animation>
+      <a-animation begin="click" attribute="position" begin="4000" from="-1.5 2.5 -10" to="-0 3 -5"dur="4000" fill="backwards" easing="ease-out"></a-animation>
+      <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-out"></a-animation>
+     </a-entity>
+      </a-entity>
+        
+    
+      <a-entity>
+      <a-entity position="4.5 2.5 -10">
+        <a-entity id="blue cone" class="intersectable" mixin="cone" sound="on: click; src: #click-sound"></a-entity>
+             <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
+
+        <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-out"> </a-animation>
+      <a-animation begin="click" attribute="position" begin="4000" from="4.5 2.5 -10" to="-0 3 -5"dur="4000" fill="backwards" easing="ease-out"></a-animation>
+      <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-out"></a-animation>
+     </a-entity>
+      </a-entity>
+      
+    <a-entity>
+      <a-entity position="1.5 2.5 -10">
+      <a-entity id="red sphere" class="intersectable" mixin="sphere" sound="on: click; src: #click-sound"></a-entity>
+      <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
+
+        <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-out"> </a-animation>
+      <a-animation begin="click" attribute="position" begin="4000" from="1.5 2.5 -10" to="-0 3 -5"dur="4000" fill="backwards" easing="ease-out"></a-animation>
+      <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-out"></a-animation>
+     </a-entity>
+      </a-entity>
+    
+       <a-entity>
+      <a-entity position="-4.5 2.5 -10">
+        <a-entity id="green cube" class="intersectable" mixin="cube" sound="on: click; src: #click-sound"></a-entity>
+      <a-animation begin="mouseenter" attribute="scale" to="1.2 1.2 1.2" fill="backwards" easing="ease-out"> </a-animation>
+
+        <a-animation begin="click" attribute="scale" begin="4000" to="2 2 2" dur="4000" fill="backwards" easing="ease-out"> </a-animation>
+      <a-animation begin="click" attribute="position" begin="4000" from="-4.5 2.5 -10" to="0 3 -5"dur="4000" fill="backwards" easing="ease-out"></a-animation>
+      <a-animation begin="click" attribute="rotation" begin="4000" to="90 180 60" dur="4000" fill="backwards" easing="ease-out"></a-animation>
+     </a-entity>
+      </a-entity>
+    
+    
+
+ <a-entity id="ground" geometry="primitive:plane;height:100;width:100" material="src:#groundTexture" rotation="-90 0 0" position="0 0 0" scale="1 1 1" visible="true"></a-entity>
+
+
+      <a-entity id="text" text="value: Let's explore 3D shapes!; color: #BBB" 
+                position="2 5 -8" scale="8 8 8"></a-entity>
+</a-entity> 
+
+      <a-entity light="type:ambient;color:#b8b8b8" position="0 3.253 7.435" rotation="0 0 0" scale="1 1 1" visible="true"></a-entity>
+      <a-entity light="type:directional;color:#c4c4c4;intensity:0.6" position="0 5.194 0" rotation="0 0 0" scale="1 1 1" visible="true"></a-entity>
+
+     
+<a-entity position="0 0.0 ">
+<a-camera position="0 1.8 0" rotation="0 0 0" camera="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" data-aframe-avatar-replayer-camera="">
+<a-entity id="cursor" raycaster="far:30;objects:.intersectable" cursor="fuse: true" geometry="primitive:ring;radiusOuter:0.015;radiusInner:0.01" material="color:white;shader:flat" position="0 0 -0.75" sound="on: fusing; src: #buzz-sound">
+  <a-animation begin="fusing" attribute="material.color" from="white" to="yellow"fill="backwards"></a-animation>
+   <a-animation begin="fusing" attribute="scale" from="1 1 1" to=".6 .6 .6" fill="backwards"></a-animation>
+  </a-entity>
+<a-entity id="iready logo" geometry="primitive:plane;height:0.41" material="0:s;1:r;2:c;3::;4:#;5:i;6:r;7:e;8:a;9:d;10:y;11:;;12: ;13:s;14:h;15:a;16:d;17:e;18:r;19:;;20: ;21:f;22:l;23:a;24:t;src:#iready;opacity:0.4" position="3.32 -1.763 -4.225" rotation="0 0 0" scale="1.2 1.2 1.2" visible="true"> </a-entity>  </a-camera>
+        
+      
+      
+      
+    </a-scene>
+  </body>
+</html>
